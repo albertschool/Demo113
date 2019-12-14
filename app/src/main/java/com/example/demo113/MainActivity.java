@@ -19,6 +19,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
+/**
+ * @author		Albert Levy <albert.school2015@gmail.com>
+ * @version     1.0
+ * @since		14/12/2019
+ * Basic application to demonstrate writing & reading file from internal storage
+ */
 public class MainActivity extends AppCompatActivity {
 
     EditText eT;
@@ -35,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
         tV=(TextView)findViewById(R.id.tV);
     }
 
+    /**
+     * Writing to text file "test.txt" from the text the user typed
+     * <p>
+     *
+     * @param view
+     */
     public void write(View view) {
         strwr=eT.getText().toString();
         try {
@@ -48,6 +60,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Clearing the text file "test.txt" to null
+     * <p>
+     *
+     * @param view
+     */
     public void reset(View view) {
         try {
             FileOutputStream fos = openFileOutput("test.txt",MODE_PRIVATE);
@@ -62,6 +80,12 @@ public class MainActivity extends AppCompatActivity {
         tV.setText("");
     }
 
+    /**
+     * Reading the text file "test.txt" to the textview widget in the screen
+     * <p>
+     *
+     * @param view
+     */
     public void read(View view) {
         try {
             FileInputStream fis= openFileInput("test.txt");
